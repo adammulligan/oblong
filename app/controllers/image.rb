@@ -1,22 +1,11 @@
 Oblong.controllers :image do
-  # get :index, :map => "/foo/bar" do
-  #   session[:foo] = "bar"
-  #   render 'index'
-  # end
+  disable :layout
 
-  # get :sample, :map => "/sample/url", :provides => [:any, :js] do
-  #   case content_type
-  #     when :js then ...
-  #     else ...
-  # end
+  get "/", :with => :page, :provides => [:png] do
+    script = "#{Padrino.root}/lib/screenshot.coffee"
+    image  = "#{Padrino.root}/public/images/screenshots/#{params[:page]}.png"
+    `phantomjs #{script} #{url("/")}/#{params[:page]} #{image}`
 
-  # get :foo, :with => :id do
-  #   "Maps to url '/foo/#{params[:id]}'"
-  # end
-
-  # get "/example" do
-  #   "Hello world!"
-  # end
-
-  
+    send_file(image)
+  end
 end

@@ -43,6 +43,9 @@ GEM
     padrino-mailer (0.10.7)
       mail (~> 2.3.0)
       padrino-core (= 0.10.7)
+    phantomjs-mac (0.0.3)
+    phantomjs.rb (0.0.5)
+      phantomjs-mac
     polyglot (0.3.3)
     rack (1.5.2)
     rack-protection (1.5.0)
@@ -72,6 +75,7 @@ DEPENDENCIES
   erubis (~> 2.7.0)
   minitest (~> 2.6.0)
   padrino (= 0.10.7)
+  phantomjs.rb
   rack-test
   rake
   sass
