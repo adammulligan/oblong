@@ -4,9 +4,11 @@ Oblong.controllers :image do
   get "/", :with => :page, :provides => [:png] do
     script = "#{Padrino.root}/lib/screenshot.coffee"
     image  = "#{Padrino.root}/public/images/screenshots/#{params[:page]}.png"
-    `phantomjs #{script} #{url("/")}/#{params[:page]} #{image}`
-    `pngcrush -c 0 -ow #{image}`
+    crushed_image  = "#{Padrino.root}/public/images/screenshots/#{params[:page]}_crushed.png"
 
-    send_file(image)
+    `phantomjs #{script} #{url("/")}/#{params[:page]} #{image}`
+    `pngcrush -c 0 #{image} #{crushed_image}`
+
+    send_file(crushed_image)
   end
 end
