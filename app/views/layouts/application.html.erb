@@ -1,24 +1,12 @@
 <html>
   <head>
-    <style type="text/css">
-      body {
-        margin: 0;
-        padding: 0;
-      }
-
-      .container {
-        box-sizing: border-box;
-        background-color: #e4e7e8;
-        width: 600px;
-        height: 800px;
-        padding: 10px;
-        margin: 0;
-      }
-    </style>
+    <link href='http://fonts.googleapis.com/css?family=Source+Sans+Pro:600' rel='stylesheet' type='text/css'>
+    <%= stylesheet_link_tag 'application' %>
   </head>
   <body>
     <div class="container">
       <%= yield %>
+      <div class="render_datetime"><%= Time.now.strftime("%d/%m/%Y %H:%M") %></div>
     </div>
   </body>
 </html>

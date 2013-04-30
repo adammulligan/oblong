@@ -5,6 +5,7 @@ Oblong.controllers :image do
     script = "#{Padrino.root}/lib/screenshot.coffee"
     image  = "#{Padrino.root}/public/images/screenshots/#{params[:page]}.png"
     `phantomjs #{script} #{url("/")}/#{params[:page]} #{image}`
+    `pngcrush -c 0 -ow #{image}`
 
     send_file(image)
   end
