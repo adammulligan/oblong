@@ -24,6 +24,7 @@ body {
 .lastfm_container {
   font-size: 1.8em;
   line-height: 1.05em;
+  min-height: 135px;
 
   h4 {
     margin: 0;
@@ -38,5 +39,16 @@ body {
   img {
     margin-right: 10px;
     float: left;
+  }
+}
+
+.countdown_container {
+  border-top: 1px solid #000;
+  padding: 10px;
+
+  span {
+    font-size: 3em;
+    font-weight: bold;
+    display: block;
   }
 }

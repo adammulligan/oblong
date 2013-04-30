@@ -19,7 +19,8 @@ body {
 
 .lastfm_container {
   font-size: 1.8em;
-  line-height: 1.05em; }
+  line-height: 1.05em;
+  min-height: 135px; }
   .lastfm_container h4 {
     margin: 0;
     text-transform: uppercase;
@@ -29,3 +30,11 @@ body {
   .lastfm_container img {
     margin-right: 10px;
     float: left; }
+
+.countdown_container {
+  border-top: 1px solid #000;
+  padding: 10px; }
+  .countdown_container span {
+    font-size: 3em;
+    font-weight: bold;
+    display: block; }
