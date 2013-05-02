@@ -19,6 +19,7 @@ class Oblong < Padrino::Application
     @lastfm_track["image"] = @lastfm_track["image"][2]["content"]
     @lastfm_track["artist"] = @lastfm_track["artist"]["content"]
 
+    require 'open-uri'
     wunderground_url = "http://api.wunderground.com/api/#{Oblong.wunderground_api_key}/conditions/q/52.2140,0.1257.json"
     wunderground_response = open(wunderground_url, "Accept-Encoding" => "deflate,gzip").read
 

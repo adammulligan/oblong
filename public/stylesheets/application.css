@@ -43,7 +43,6 @@ body {
     display: block; }
 
 .countdown_container {
-  border-right: 1px solid #000;
   float: left; }
 
 .weather_container {
