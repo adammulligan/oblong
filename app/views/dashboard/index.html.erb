@@ -8,3 +8,8 @@
 <div class="countdown_container">
   <span><%= (Date.new(2013, 5, 26) - Date.today).to_i %> days</span> until Arrested Development
 </div>
+
+<div class="weather_container">
+  <img src="<%= @current_weather["forecast_url"] %>" />
+  <span><%= @current_weather["temp_c"] %>ºC</span> feels like <%= @current_weather["feelslike_c"] %>ºC
+</div>

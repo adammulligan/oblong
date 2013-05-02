@@ -20,7 +20,8 @@ body {
 .lastfm_container {
   font-size: 1.8em;
   line-height: 1.05em;
-  min-height: 135px; }
+  min-height: 135px;
+  border-top: 1px solid #000; }
   .lastfm_container h4 {
     margin: 0;
     text-transform: uppercase;
@@ -31,10 +32,19 @@ body {
     margin-right: 10px;
     float: left; }
 
-.countdown_container {
-  border-top: 1px solid #000;
-  padding: 10px; }
-  .countdown_container span {
+.countdown_container,
+.weather_container {
+  width: 50%; }
+  .countdown_container span,
+  .weather_container span {
     font-size: 3em;
     font-weight: bold;
     display: block; }
+
+.countdown_container {
+  float: left; }
+
+.weather_container {
+  float: right; }
+  .weather_container img {
+    float: right; }
