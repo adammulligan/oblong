@@ -25,7 +25,7 @@ body {
   font-size: 1.8em;
   line-height: 1.05em;
   min-height: 135px;
-  border-top: 1px solid #000;
+  border-bottom: 1px solid #000;
 
   h4 {
     margin: 0;
@@ -46,6 +46,7 @@ body {
 .countdown_container,
 .weather_container {
   width: 50%;
+  margin-top: 10px;
 
   span {
     font-size: 3em;

@@ -21,7 +21,7 @@ body {
   font-size: 1.8em;
   line-height: 1.05em;
   min-height: 135px;
-  border-top: 1px solid #000; }
+  border-bottom: 1px solid #000; }
   .lastfm_container h4 {
     margin: 0;
     text-transform: uppercase;
@@ -34,7 +34,8 @@ body {
 
 .countdown_container,
 .weather_container {
-  width: 50%; }
+  width: 50%;
+  margin-top: 10px; }
   .countdown_container span,
   .weather_container span {
     font-size: 3em;
@@ -42,6 +43,7 @@ body {
     display: block; }
 
 .countdown_container {
+  border-right: 1px solid #000;
   float: left; }
 
 .weather_container {
