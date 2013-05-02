@@ -19,10 +19,19 @@ class Oblong < Padrino::Application
     @lastfm_track["image"] = @lastfm_track["image"][2]["content"]
     @lastfm_track["artist"] = @lastfm_track["artist"]["content"]
 
-    #wunderground_url = "http://api.wunderground.com/api/#{Oblong.wunderground_api_key}/conditions/q/52.2140,0.1257.json"
-    #@wunderground_response = open(wunderground_url) { |f| f.read }
-    #@current_weather = @wunderground_response['current_observation']
-    @current_weather = {"temp_c" => "10.6", "feelslike_c" => "10.6", "forecast_url" => "http://icons-ak.wxug.com/i/c/k/nt_clear.gif"}
+    wunderground_url = "http://api.wunderground.com/api/#{Oblong.wunderground_api_key}/conditions/q/52.2140,0.1257.json"
+    wunderground_response = open(wunderground_url, "Accept-Encoding" => "deflate,gzip").read
+
+    require 'json'
+
+    # The Wunderground API appears to be returning an improperly
+    # compressed page (doesn't have a zlib header), so we're using this
+    # work around to force Zlib to not look for headers.
+    #
+    # See http://stackoverflow.com/a/1738464
+    zstream = Zlib::Inflate.new(-Zlib::MAX_WBITS)
+    @current_weather = JSON.parse(zstream.inflate(wunderground_response))
+    @current_weather = @current_weather['current_observation']
 
     render 'dashboard/index'
   end
